@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 import shap
 
 # Load and preprocess data (same as your original code)
-df = pd.read_csv('survey.csv')
+df = pd.read_csv('D:\mental-health\Mental-Health-Analysis\data\survey.csv')
 df = df.drop(['comments', 'Timestamp'], axis=1)
 df["state"] = df["state"].fillna(df["Country"])
 df['work_interfere'] = df['work_interfere'].fillna('unknown')
